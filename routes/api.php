@@ -25,3 +25,7 @@ Route::get('message', function () {
 
 // Form submission route
 Route::post('/form', [FormController::class, 'store']);
+
+Route::get('/csrf-token', function() {
+    return response()->json(['csrfToken' => csrf_token()]);
+});
